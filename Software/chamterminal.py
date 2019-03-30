@@ -229,7 +229,6 @@ def cmdUpgrade(chameleon, arg):
     exit(0)
 
 class MyChamelon(Cmd):
-    #print bcolors.FAIL + "Warning: No active frommets remain. Continue?" + bcolors.ENDC
     prompt = bcolors.BOLD + 'Chameleon> '+ bcolors.ENDC
     intro = bcolors.WARNING + "Warning! Type ? to list commands - before any command, establish the Chameleon port!" + bcolors.ENDC
     verboseFunc = None
@@ -423,8 +422,6 @@ class MyChamelon(Cmd):
     def default(self, inp):
         if (inp == 'x' or inp == 'q'):
             return self.do_exit(inp)
-    #def postloop(self):
-    #print
 
     do_EOF = do_exit
     help_EOF = help_exit
