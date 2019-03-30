@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 #
 # Command line tool to control the Chameleon through command line
+#
+# Modified - new terminal style: Salvador Mendoza (salmg.net) 
+#
 # Authors: Simon K. (simon.kueppers@rub.de)
+
 
 import argparse
 import Chameleon
