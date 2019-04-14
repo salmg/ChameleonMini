@@ -251,7 +251,7 @@ class MyChamelon(Cmd):
     def do_shell(self, line):
         print (">Running shell command: "+ line)
         output = os.popen(line).read()
-        print output
+        print (output)
         self.last_output = output
 
     def help_shell(self):
