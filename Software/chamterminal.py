@@ -66,6 +66,8 @@ def cmdDumpMFU(chameleon, arg):
     return "{}".format(chameleon.cmdDumpMFU()['response'])
 
 def cmdConfig(chameleon, arg):
+    if arg=='':
+        arg=None
     result = chameleon.cmdConfig(arg)
 
     if (arg is None or arg == ''):
@@ -251,7 +253,7 @@ class MyChamelon(Cmd):
     def do_shell(self, line):
         print (">Running shell command: "+ line)
         output = os.popen(line).read()
-        print output
+        print (output)
         self.last_output = output
 
     def help_shell(self):
@@ -336,13 +338,15 @@ class MyChamelon(Cmd):
         print('>Download the device log, example: log file.log')
 
     def do_uid(self, inp):
-        self.executeCmd(cmdUID,'?')
+        if inp=='':
+            inp=None
+        self.executeCmd(cmdUID,inp)
  
     def help_uid(self):
         print('>Retrieve or set the current UID')
 
     def do_getuid(self, inp):
-        self.executeCmd(cmdGetUID,'?')
+        self.executeCmd(cmdGetUID,None)
  
     def help_getuid(self):
         print('>Retrieve UID of device in range')
